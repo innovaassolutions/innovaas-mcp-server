@@ -104,6 +104,23 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 3. Publishes an MQTT message
 4. Future: extend with LLM integration, semantic topic matching, and responses
 
+## Simulation in This Project
+
+Currently, the simulation in this project is **on-demand** and lives in the FastAPI server:
+
+- **Natural Language Prompts:** The `/mcp` endpoint accepts prompts (e.g., "Check temperature on Line 1") via HTTP POST.
+- **Prompt-to-Topic Mapping:** Prompts are mapped to MQTT topics using simple logic and the `namespace_config.json` file.
+- **MQTT Publishing:** The mapped message is published to the EMQX MQTT broker, simulating a device or system sending data/events.
+- **Unified Namespace:** The topic structure in `namespace_config.json` simulates a real industrial Unified Namespace.
+
+**What is NOT simulated (yet):**
+- No automated or periodic device data publishing.
+- No simulated dashboards or LLMs consuming MQTT messages.
+- No time-based or event-driven simulation—actions are triggered by API calls.
+
+**To extend the simulation:**
+You can add background tasks, scripts, or services to simulate devices, dashboards, or AI agents.
+
 ## EMQX Enterprise MQTT Broker
 
 This project uses EMQX Enterprise 5.9.0 as the MQTT broker.
