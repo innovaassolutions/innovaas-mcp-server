@@ -1,6 +1,26 @@
-# Innovaas MCP Server
+# innovaas-mcp-server
 
-A lightweight FastAPI service that translates natural language prompts into MQTT actions using a structured Unified Namespace.
+## Project Structure
+
+```
+innovaas-mcp-server/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── mqtt_client.py
+│   └── namespace_config.json
+├── .env
+├── .env.example
+├── requirements.txt
+├── service/
+│   └── innovaas-mcp.service
+├── README.md
+├── venv/
+```
+
+- All source code and config now live in `app/`.
+- `.env` and `.env.example` are for environment variables (e.g., MQTT_BROKER).
+- Service file and requirements remain unchanged.
 
 ## Setup
 
@@ -33,5 +53,3 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 - [ ] Subscription + read support
 - [ ] Model Context Protocol compliance
 - [ ] Unit tests
-=======
-# innovaas-mcp-server

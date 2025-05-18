@@ -1,0 +1,6 @@
+{
+  "temperature": "innovaas/site1/areaA/line1/workcell3/motor1/temperature",
+  "pressure": "innovaas/site1/areaA/line1/workcell3/motor1/pressure",
+  "vibration": "innovaas/site1/areaB/line2/workcell2/motor3/vibration",
+  "default": "innovaas/default/default/default/default/default/default"
+}
