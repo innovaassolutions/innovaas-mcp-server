@@ -33,3 +33,5 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 - [ ] Subscription + read support
 - [ ] Model Context Protocol compliance
 - [ ] Unit tests
+=======
+# innovaas-mcp-server
