@@ -47,6 +47,22 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 3. Publishes an MQTT message
 4. Future: extend with LLM integration, semantic topic matching, and responses
 
+## EMQX Enterprise MQTT Broker
+
+This project uses EMQX Enterprise 5.9.0 as the MQTT broker.
+
+- **Service name:** `emqx` (managed via systemd)
+- **Dashboard:** http://localhost:18083
+- **Default MQTT port:** 1883
+- **License:** Free use for a single node in internal environments. See EMQX output for full license details.
+
+To manage the broker:
+```bash
+sudo systemctl status emqx
+sudo systemctl restart emqx
+sudo systemctl stop emqx
+```
+
 ## To Do
 
 - [ ] Real NLP parsing
