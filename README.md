@@ -143,3 +143,8 @@ sudo systemctl stop emqx
 - [ ] Subscription + read support
 - [ ] Model Context Protocol compliance
 - [ ] Unit tests
+- [ ] Design and implement an in-stream OEE (Overall Equipment Effectiveness) processor:
+    - Calculate OEE in real time from machine and sensor data via MQTT
+    - Monitor and alert on OEE thresholds
+    - Publish OEE metrics to MQTT and/or store in TimescaleDB
+    - Integrate with MCP and LLM to support natural language queries (e.g., "What is the current OEE for Line 1?", "Alert me if OEE drops below 85%") and alert setup
