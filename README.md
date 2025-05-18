@@ -1,3 +1,60 @@
+## Objective of This Project
+
+To build a live simulation and working prototype of a modern industrial data architecture that demonstrates how:
+
+🏭 **Real-world industrial environments**  
+can communicate with  
+🤖 **AI/LLM systems**  
+through an architecture combining:  
+**MCP (Model Context Protocol) + MQTT + UNS (Unified Namespace)**
+
+---
+
+### 👷‍♂️ In Plain Terms
+
+You're building a working bridge between:
+
+| From                                   | Through                                                      | To                                              |
+|---------------------------------------- |-------------------------------------------------------------|-------------------------------------------------|
+| Machine data, operator intent, SCADA/OT systems | An MCP server that interprets natural language + routes messages via MQTT | LLMs (like GPT), dashboards, or agents that act on it |
+
+---
+
+### ✅ The Goals of the Demonstration Are
+
+- **Accept Natural Language Prompts**  
+  Like: "Check temperature on Line 1" or "Start mixer 3"  
+  Via a FastAPI endpoint `/mcp`
+
+- **Translate to MQTT**  
+  Prompt is processed and mapped to an MQTT topic  
+  Message is published via EMQX MQTT broker
+
+- **Visualize + Monitor the System**  
+  Use MQTTX to observe data flow  
+  Optionally pull into Ignition, HighByte, or a dashboard
+
+- **Optionally Add a Real LLM (GPT or Claude)**  
+  To interpret intent  
+  Route messages  
+  Eventually issue control logic or insights
+
+- **Simulate a Real Unified Namespace**  
+  Organize topics in a standard hierarchy (e.g., site/area/line/device/tag)  
+  Enable subscription to context-aware messages
+
+---
+
+### 🔁 Why This Matters
+
+This is a foundational step in letting:
+
+- Engineers and operators issue commands in natural language
+- AI make decisions based on live machine data
+- A factory's Unified Namespace power predictive models, visual dashboards, or intelligent assistants
+
+---
+
 # innovaas-mcp-server
 
 ## Project Structure
