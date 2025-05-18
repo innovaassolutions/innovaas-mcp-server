@@ -121,6 +121,44 @@ Currently, the simulation in this project is **on-demand** and lives in the Fast
 **To extend the simulation:**
 You can add background tasks, scripts, or services to simulate devices, dashboards, or AI agents.
 
+## Device Simulator
+
+A standalone Python script (`device_simulator.py`) is provided to simulate machines and sensors in a manufacturing environment. This script publishes realistic sensor data (e.g., temperature, vibration) to MQTT topics, making your Unified Namespace come alive for demos and testing.
+
+### Setup
+
+1. **Activate your virtual environment:**
+   ```bash
+   source venv/bin/activate
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install paho-mqtt python-dotenv
+   ```
+
+3. **(Optional) Set MQTT broker info in `.env`:**
+   ```
+   MQTT_HOST=localhost
+   MQTT_PORT=1883
+   MQTT_USERNAME=
+   MQTT_PASSWORD=
+   ```
+
+### Running the Simulator
+
+From the project root, run:
+```bash
+python device_simulator.py --site site1 --area areaA --line line1 --interval 5
+```
+- This will publish simulated data every 5 seconds for each machine and sensor.
+- You can adjust the `--site`, `--area`, `--line`, and `--interval` arguments as needed.
+
+### Extending the Simulator
+- Add more machines or sensors by editing the `DEFAULT_MACHINES` list in the script.
+- Simulate control commands by subscribing to control topics (future feature).
+- Load configuration from a file for more complex setups.
+
 ## EMQX Enterprise MQTT Broker
 
 This project uses EMQX Enterprise 5.9.0 as the MQTT broker.
