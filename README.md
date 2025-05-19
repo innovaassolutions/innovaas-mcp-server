@@ -213,6 +213,7 @@ sudo systemctl stop emqx
     - Monitor and alert on OEE thresholds
     - Publish OEE metrics to MQTT and/or store in TimescaleDB
     - Integrate with MCP and LLM to support natural language queries (e.g., "What is the current OEE for Line 1?", "Alert me if OEE drops below 85%") and alert setup
+- [ ] Set up data retention policy in TimescaleDB to automatically drop or compress old sensor data
 
 ## Full Roadmap
 
