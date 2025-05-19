@@ -233,3 +233,41 @@ This section outlines the planned and suggested features for this project:
 ---
 
 This roadmap will evolve as the project grows. Contributions and suggestions are welcome!
+
+## Enterprise Readiness Requirements
+
+To move this project from prototype to production, the following areas must be addressed:
+
+- **Security**
+  - Implement authentication and authorization for all APIs and MQTT
+  - Enforce TLS/SSL for all network traffic
+  - Use secure secrets management (not just .env files)
+
+- **Reliability & Robustness**
+  - Add comprehensive error handling and logging
+  - Implement health checks and monitoring
+  - Ensure resilience (reconnects, retries, graceful shutdowns)
+
+- **Scalability**
+  - Design for horizontal scaling of services
+  - Perform load and stress testing
+
+- **Observability**
+  - Centralize and structure logs
+  - Expose system and business metrics (e.g., via Prometheus)
+  - Add distributed tracing
+
+- **Deployment & Operations**
+  - Containerize all services (Docker/Kubernetes)
+  - Set up CI/CD pipelines
+  - Document backup and restore procedures
+
+- **Testing & Code Quality**
+  - Add unit, integration, and end-to-end tests
+  - Enforce code linting and type checking
+  - Conduct code reviews
+
+- **Documentation**
+  - Provide API documentation, architecture diagrams, and operational runbooks
+
+These requirements should be addressed before considering the system for production or enterprise deployment.
