@@ -186,3 +186,50 @@ sudo systemctl stop emqx
     - Monitor and alert on OEE thresholds
     - Publish OEE metrics to MQTT and/or store in TimescaleDB
     - Integrate with MCP and LLM to support natural language queries (e.g., "What is the current OEE for Line 1?", "Alert me if OEE drops below 85%") and alert setup
+
+## Full Roadmap
+
+This section outlines the planned and suggested features for this project:
+
+- **Device Simulation**
+  - Simulate multiple machines and sensors (temperature, vibration, etc.)
+  - Publish realistic data to MQTT topics
+  - Support for control commands and dynamic configuration
+
+- **MCP Server (FastAPI)**
+  - Accept natural language prompts via `/mcp` endpoint
+  - Map prompts to MQTT topics and publish commands
+  - Integrate with LLMs for advanced intent recognition and responses
+
+- **Unified Namespace (UNS)**
+  - Organize MQTT topics in a standard hierarchy (site/area/line/device/tag)
+  - Enable context-aware messaging and subscriptions
+
+- **In-Stream Processing & OEE**
+  - Implement a data collector/processor to subscribe to MQTT topics
+  - Calculate OEE (Overall Equipment Effectiveness) in real time
+  - Monitor and alert on OEE thresholds
+  - Publish OEE metrics to MQTT and/or store in TimescaleDB
+  - Integrate with MCP and LLM for natural language queries and alert setup
+
+- **TimescaleDB Integration**
+  - Store historical sensor and event data
+  - Enable analytics, trend analysis, and dashboarding
+  - Support queries from MCP/LLM for historical context
+
+- **Dashboards & Visualization**
+  - Integrate with MQTTX, Grafana, or other tools to visualize live and historical data
+  - Optionally connect to Ignition, HighByte, or other industrial platforms
+
+- **Security & Robustness**
+  - Add authentication and authorization for API and MQTT
+  - Handle errors and edge cases gracefully
+
+- **Testing & Documentation**
+  - Add unit and integration tests
+  - Provide example API requests, responses, and usage scenarios
+  - Document extensibility for new devices, sensors, and analytics
+
+---
+
+This roadmap will evolve as the project grows. Contributions and suggestions are welcome!
