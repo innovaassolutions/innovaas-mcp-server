@@ -104,6 +104,31 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 3. Publishes an MQTT message
 4. Future: extend with LLM integration, semantic topic matching, and responses
 
+## ISA-95 Naming Convention and the Unified Namespace
+
+This project uses the ISA-95 naming convention to structure MQTT topics in a hierarchical and standardized way, forming what is known as a Unified Namespace (UNS).
+
+### What is ISA-95?
+ISA-95 is an international standard for developing an automated interface between enterprise and control systems. It defines a consistent model for representing manufacturing operations, typically using the following hierarchy:
+
+```
+<enterprise>/<site>/<area>/<line>/<workcell>/<device>/<tag>
+```
+
+### How the Unified Namespace Leverages ISA-95
+The Unified Namespace (UNS) is a central, real-time, and contextual data structure that organizes all industrial data using the ISA-95 hierarchy. In this project, all MQTT topics follow this structure, making it easy to:
+- Locate and subscribe to any data point in the organization
+- Maintain a single source of truth for all real-time and historical data
+- Enable context-aware analytics, dashboards, and AI/LLM integrations
+
+### Value to Project Objectives
+- **Scalability:** New devices, lines, or sites can be added without changing the overall structure.
+- **Interoperability:** Standardized topic names make it easy for different systems (SCADA, MES, AI, dashboards) to interact.
+- **Clarity:** Anyone can understand what a topic represents just by its name.
+- **Extensibility:** The structure supports future expansion, such as adding new sensors or integrating with other enterprise systems.
+
+By leveraging ISA-95 and the Unified Namespace, this project demonstrates a modern, scalable, and future-proof approach to industrial data architecture.
+
 ## Simulation in This Project
 
 Currently, the simulation in this project is **on-demand** and lives in the FastAPI server:
