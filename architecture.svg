@@ -44,5 +44,5 @@
   <text x="565" y="430" class="arrow-label">MQTT Publish</text>
   <!-- Device Simulator to MQTT Broker (up arrow) -->
   <line x1="565" y1="480" x2="565" y2="380" stroke="#01a9db" class="arrow"/>
-  <text x="585" y="430" class="arrow-label-blue">MQTT Data</text>
+  <text x="555" y="430" class="arrow-label-blue" text-anchor="end">MQTT Data</text>
 </svg>
