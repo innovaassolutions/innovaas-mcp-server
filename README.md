@@ -99,6 +99,8 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
 ## Architecture
 
+![Project Architecture](architecture.svg)
+
 1. Receives a prompt at `/mcp`
 2. Maps it to a topic using `namespace_config.json`
 3. Publishes an MQTT message
